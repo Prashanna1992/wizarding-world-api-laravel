@@ -14,7 +14,34 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $categories =[
+            [
+                'title' => 'Characters',
+                'image' => asset('images/hogwarts_inspiredbythemuse.jpg'),
+                'description' => 'Search All Characters',
+                'alt_text' => 'Hogwarts art by @inspiredbythemuse',
+            ],
+            [
+                'title' => 'Students',
+                'image' => asset('images/broom.jpg'),
+                'description' => 'Search Hogwarts Students',
+                'alt_text' => '',
+            ],
+            [
+                'title' => 'Spells',
+                'image' => '',
+                'description' => 'Search Spells',
+                'alt_text' => '',
+            ],
+            [
+                'title' => 'House Members',
+                'image' => '',
+                'description' => 'Search Wizards Based On Houses',
+                'alt_text' => '',
+            ],
+
+        ];
+        return view('welcome', compact('categories'));
     }
 
     /**
